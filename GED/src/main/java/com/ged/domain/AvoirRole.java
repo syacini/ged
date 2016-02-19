@@ -1,36 +1,24 @@
 package com.ged.domain;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 /**
  * The persistent class for the t_avoir_role database table.
  * 
  */
 @Entity
-@Table(name="t_avoir_role")
-@NamedQuery(name="AvoirRole.findAll", query="SELECT a FROM AvoirRole a")
+@Table(name = "t_avoir_role")
+@NamedQuery(name = "AvoirRole.findAll", query = "SELECT a FROM AvoirRole a")
 public class AvoirRole implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
 	private AvoirRolePK id;
-
-	//uni-directional many-to-one association to Utilisateur
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="ID_UTILISATEUR", nullable=false, insertable=false, updatable=false)
-	private Utilisateur utilisateur;
-
-	//uni-directional many-to-one association to Bibliotheque
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="ID_BIBLIOTHEQUE", nullable=false, insertable=false, updatable=false)
-	private Bibliotheque bibliotheque;
-
-	//uni-directional many-to-one association to Role
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="ID_ROLE", nullable=false, insertable=false, updatable=false)
-	private Role role;
 
 	public AvoirRole() {
 	}
@@ -43,28 +31,29 @@ public class AvoirRole implements Serializable {
 		this.id = id;
 	}
 
-	public Utilisateur getUtilisateur() {
-		return this.utilisateur;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
-	}
-
-	public Bibliotheque getBibliotheque() {
-		return this.bibliotheque;
-	}
-
-	public void setBibliotheque(Bibliotheque bibliotheque) {
-		this.bibliotheque = bibliotheque;
-	}
-
-	public Role getRole() {
-		return this.role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AvoirRole other = (AvoirRole) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 
 }
