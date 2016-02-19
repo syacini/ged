@@ -1,7 +1,11 @@
 package com.ged.domain;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * The primary key class for the t_historique_actions_documents database table.
@@ -9,72 +13,86 @@ import javax.persistence.*;
  */
 @Embeddable
 public class HistoriqueActionsDocumentPK implements Serializable {
-	//default serial version id, required for serializable classes.
+	// default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="ID_ACTION", insertable=false, updatable=false, unique=true, nullable=false)
-	private byte idAction;
+	// uni-directional many-to-one association to Action
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_ACTION", nullable = false, insertable = false, updatable = false)
+	private Action action;
 
-	@Column(name="ID_UTILISATEUR", insertable=false, updatable=false, unique=true, nullable=false)
-	private byte idUtilisateur;
+	// uni-directional many-to-one association to Utilisateur
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_UTILISATEUR", nullable = false, insertable = false, updatable = false)
+	private Utilisateur utilisateur;
 
-	@Column(name="ID_DOCUMENT", insertable=false, updatable=false, unique=true, nullable=false)
-	private int idDocument;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="DATE_HEURE_ACTION", unique=true, nullable=false)
-	private java.util.Date dateHeureAction;
+	// uni-directional many-to-one association to Document
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_DOCUMENT", nullable = false, insertable = false, updatable = false)
+	private Document document;
 
 	public HistoriqueActionsDocumentPK() {
 	}
-	public byte getIdAction() {
-		return this.idAction;
-	}
-	public void setIdAction(byte idAction) {
-		this.idAction = idAction;
-	}
-	public byte getIdUtilisateur() {
-		return this.idUtilisateur;
-	}
-	public void setIdUtilisateur(byte idUtilisateur) {
-		this.idUtilisateur = idUtilisateur;
-	}
-	public int getIdDocument() {
-		return this.idDocument;
-	}
-	public void setIdDocument(int idDocument) {
-		this.idDocument = idDocument;
-	}
-	public java.util.Date getDateHeureAction() {
-		return this.dateHeureAction;
-	}
-	public void setDateHeureAction(java.util.Date dateHeureAction) {
-		this.dateHeureAction = dateHeureAction;
+
+	public Action getAction() {
+		return this.action;
 	}
 
-	public boolean equals(Object other) {
-		if (this == other) {
-			return true;
-		}
-		if (!(other instanceof HistoriqueActionsDocumentPK)) {
-			return false;
-		}
-		HistoriqueActionsDocumentPK castOther = (HistoriqueActionsDocumentPK)other;
-		return 
-			(this.idAction == castOther.idAction)
-			&& (this.idUtilisateur == castOther.idUtilisateur)
-			&& (this.idDocument == castOther.idDocument)
-			&& this.dateHeureAction.equals(castOther.dateHeureAction);
+	public void setAction(Action action) {
+		this.action = action;
 	}
 
+	public Utilisateur getUtilisateur() {
+		return this.utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Document getDocument() {
+		return this.document;
+	}
+
+	public void setDocument(Document document) {
+		this.document = document;
+	}
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int hash = 17;
-		hash = hash * prime + ((int) this.idAction);
-		hash = hash * prime + ((int) this.idUtilisateur);
-		hash = hash * prime + this.idDocument;
-		hash = hash * prime + this.dateHeureAction.hashCode();
-		
-		return hash;
+		int result = 1;
+		result = prime * result + ((action == null) ? 0 : action.hashCode());
+		result = prime * result + ((document == null) ? 0 : document.hashCode());
+		result = prime * result + ((utilisateur == null) ? 0 : utilisateur.hashCode());
+		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		HistoriqueActionsDocumentPK other = (HistoriqueActionsDocumentPK) obj;
+		if (action == null) {
+			if (other.action != null)
+				return false;
+		} else if (!action.equals(other.action))
+			return false;
+		if (document == null) {
+			if (other.document != null)
+				return false;
+		} else if (!document.equals(other.document))
+			return false;
+		if (utilisateur == null) {
+			if (other.utilisateur != null)
+				return false;
+		} else if (!utilisateur.equals(other.utilisateur))
+			return false;
+		return true;
+	}
+
 }
