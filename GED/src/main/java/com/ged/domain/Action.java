@@ -8,7 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.ged.exception.ValidationException;
 
 /**
  * The persistent class for the t_action database table.
@@ -78,4 +84,12 @@ public class Action implements Serializable {
 		return true;
 	}
 
+//	@PrePersist
+//	@PreUpdate
+//	@ExceptionHandler({ValidationException.class})
+//	private void validerDonnees() {
+//		if (libelleAction == null || "".equals(libelleAction)) {
+//			throw new ValidationException("ACTION : Libellé vide.");
+//		}
+//	}
 }
