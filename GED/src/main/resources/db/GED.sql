@@ -214,3 +214,4 @@ alter table T_HISTORIQUE_ACTIONS_DOCUMENTS add constraint FK_T_HISTORIQUE_ACTION
 alter table T_TYPE_DOCUMENT add constraint FK_T_SUPER_TYPE foreign key (ID_SUPER_TYPE)
       references T_TYPE_DOCUMENT (ID_TYPE_DOCUMENT) on delete restrict on update restrict;
 
+ALTER TABLE `db_geseld`.`t_utilisateur` ADD COLUMN `ACTIF` BOOLEAN NOT NULL DEFAULT 0 AFTER `PASSWORD`;
