@@ -14,6 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_avoir_role")
 @NamedQuery(name = "AvoirRole.findAll", query = "SELECT a FROM AvoirRole a")
+@NamedQuery(name = "AvoirRole.getRoleUtilisateurByBibliotheque", query = "SELECT a.role FROM AvoirRole a WHERE a.id.utilisateur := u AND a.id.bibliotheque := b")
 public class AvoirRole implements Serializable {
 	private static final long serialVersionUID = 1L;
 

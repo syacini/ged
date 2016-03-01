@@ -22,7 +22,6 @@ public class AvoirRoleBusinessImpl implements IAvoirRoleBusiness {
 		AvoirRolePK id = new AvoirRolePK();
 		id.setUtilisateur(utilisateur);
 		id.setRole(role);
-		;
 		id.setBibliotheque(bibliotheque);
 		AvoirRole avoirRole = new AvoirRole();
 		avoirRole.setId(id);
@@ -31,14 +30,13 @@ public class AvoirRoleBusinessImpl implements IAvoirRoleBusiness {
 
 	@Override
 	public void retirerRoleUtilisateur(Utilisateur utilisateur, Role role, Bibliotheque bibliotheque) {
-		// TODO Auto-generated method stub
-
+		avoirRoleRepository.retirerRoleUtilisateur(utilisateur, role, bibliotheque);
 	}
 
 	@Override
 	public Collection<Role> getRolesUtilisateur(Utilisateur utilisateur, Bibliotheque bibliotheque) {
-		// TODO Auto-generated method stub
-		return null;
+		return avoirRoleRepository.getRolesUtilisateur(utilisateur, bibliotheque);
 	}
+	
 
 }
