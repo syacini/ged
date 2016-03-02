@@ -215,3 +215,7 @@ alter table T_TYPE_DOCUMENT add constraint FK_T_SUPER_TYPE foreign key (ID_SUPER
       references T_TYPE_DOCUMENT (ID_TYPE_DOCUMENT) on delete restrict on update restrict;
 
 ALTER TABLE `db_geseld`.`t_utilisateur` ADD COLUMN `ACTIF` BOOLEAN NOT NULL DEFAULT 0 AFTER `PASSWORD`;
+
+ALTER TABLE `db_geseld`.`t_bibliotheque` ADD COLUMN `ACTIVE` BOOLEAN NOT NULL DEFAULT 0 AFTER `LIBELLE_BIBLIOTHEQUE`;
+
+ALTER TABLE `db_geseld`.`t_conteneur` ADD COLUMN `ACTIF` BOOLEAN NOT NULL DEFAULT 0 AFTER `DATE_HEURE_CLASSEMENT`;

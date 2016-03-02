@@ -3,11 +3,13 @@ package com.ged.business.impl;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ged.business.IUtilisateurBusiness;
 import com.ged.dao.UtilisateurRepository;
 import com.ged.domain.Utilisateur;
 
+@Service
 public class UtilisateurBusinessImpl implements IUtilisateurBusiness {
 
 	@Autowired

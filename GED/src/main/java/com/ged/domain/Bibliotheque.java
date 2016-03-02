@@ -34,6 +34,9 @@ public class Bibliotheque implements Serializable {
 	@OneToMany(mappedBy = "bibliotheque")
 	private List<Conteneur> conteneurs;
 
+	@Column(name = "ACTIVE", nullable = false)
+	private Boolean active;
+
 	public Bibliotheque() {
 	}
 
@@ -73,6 +76,14 @@ public class Bibliotheque implements Serializable {
 		conteneur.setBibliotheque(null);
 
 		return conteneur;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 	@Override

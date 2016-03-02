@@ -51,6 +51,9 @@ public class Conteneur implements Serializable {
 	@OneToMany(mappedBy="conteneur")
 	private List<Document> documents;
 
+	@Column(name = "ACTIF", nullable = false)
+	private Boolean actif;
+	
 	public Conteneur() {
 	}
 
@@ -144,6 +147,14 @@ public class Conteneur implements Serializable {
 		document.setConteneur(null);
 
 		return document;
+	}
+
+	public Boolean getActif() {
+		return actif;
+	}
+
+	public void setActif(Boolean actif) {
+		this.actif = actif;
 	}
 
 }

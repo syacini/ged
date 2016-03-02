@@ -9,10 +9,10 @@ import com.ged.domain.Utilisateur;
 
 public interface IAvoirRoleBusiness {
 
-	AvoirRole attribuerRoleUtilisateur(Utilisateur utilisateur, Role role, Bibliotheque bibliotheque);
+	AvoirRole attribuerRoleUtilisateurBibliotheque(Utilisateur utilisateur, Role role, Bibliotheque bibliotheque);
 
-	void retirerRoleUtilisateur(Utilisateur utilisateur, Role role, Bibliotheque bibliotheque);
+	void retirerRoleUtilisateurBibliotheque(Utilisateur utilisateur, Role role, Bibliotheque bibliotheque);
 
-	Collection<Role> getRolesUtilisateur(Utilisateur utilisateur, Bibliotheque bibliotheque);
+	Collection<Role> getRolesUtilisateurBibliotheque(Utilisateur utilisateur, Bibliotheque bibliotheque);
 
 }

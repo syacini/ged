@@ -1,6 +1,5 @@
 package com.ged.business;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 import com.ged.domain.Action;
@@ -12,7 +11,7 @@ public interface IRoleBusiness {
 
 	public Collection<Role> getAllRoles();
 
-	public Role getRoleById(Serializable id);
+	public Role getRoleById(Byte id);
 
 	public void attribuerAction(Role role, Action action);
 
