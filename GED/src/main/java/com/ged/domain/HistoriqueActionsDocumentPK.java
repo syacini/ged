@@ -1,11 +1,15 @@
 package com.ged.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * The primary key class for the t_historique_actions_documents database table.
@@ -31,6 +35,10 @@ public class HistoriqueActionsDocumentPK implements Serializable {
 	@JoinColumn(name = "ID_DOCUMENT", nullable = false, insertable = false, updatable = false)
 	private Document document;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "DATE_HEURE_ACTION", nullable = false, insertable = true, updatable = false)
+	private Date dateHeureAction;
+	
 	public HistoriqueActionsDocumentPK() {
 	}
 

@@ -3,11 +3,13 @@ package com.ged.business.impl;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ged.business.IEmplacementPhysiqueBusiness;
 import com.ged.dao.EmplacementPhysiqueRepository;
 import com.ged.domain.EmplacementPhysique;
 
+@Service
 public class EmplacementPhysiqueImpl implements IEmplacementPhysiqueBusiness {
 
 	@Autowired

@@ -24,5 +24,7 @@ public interface IDocumentBusiness {
 	public Document majDocument(Document document);
 
 	public void supprimerDocument(Document document);
+	
+	public void restaurerDocument(Document document);
 
 }

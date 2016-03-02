@@ -67,6 +67,9 @@ public class Document implements Serializable {
 	@JoinColumn(name = "ID_TYPE_DOCUMENT", nullable = false)
 	private TypeDocument typeDocument;
 
+	@Column(name = "ACTIF", nullable = false)
+	private Boolean actif;
+
 	public Document() {
 	}
 
@@ -140,6 +143,14 @@ public class Document implements Serializable {
 
 	public void setTypeDocument(TypeDocument typeDocument) {
 		this.typeDocument = typeDocument;
+	}
+
+	public Boolean getActif() {
+		return actif;
+	}
+
+	public void setActif(Boolean actif) {
+		this.actif = actif;
 	}
 
 	@Override

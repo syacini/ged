@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ged.business.IDocumentBusiness;
 import com.ged.dao.DocumentRepository;
@@ -12,6 +13,7 @@ import com.ged.domain.Conteneur;
 import com.ged.domain.Document;
 import com.ged.domain.TypeDocument;
 
+@Service
 public class DocumentBusinessImpl implements IDocumentBusiness {
 
 	@Autowired
@@ -59,8 +61,11 @@ public class DocumentBusinessImpl implements IDocumentBusiness {
 
 	@Override
 	public void supprimerDocument(Document document) {
-		// TODO Auto-generated method stub
-
+		document.setActif(false);
 	}
 
+	@Override
+	public void restaurerDocument(Document document) {
+		document.setActif(true);
+	}
 }
