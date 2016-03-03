@@ -31,7 +31,7 @@ public class BibliothequeBusinessImpl implements IBibliothequeBusiness {
 	}
 
 	@Override
-	public Bibliotheque getBibliothequeById(Byte id) {
+	public Bibliotheque getBibliothequeById(Short id) {
 		return bibliothequeRepository.findOne(id);
 	}
 

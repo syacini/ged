@@ -25,7 +25,7 @@ public class Bibliotheque implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_BIBLIOTHEQUE", updatable = false, unique = true, nullable = false)
-	private Byte idBibliotheque;
+	private Short idBibliotheque;
 
 	@Column(name = "LIBELLE_BIBLIOTHEQUE", nullable = false, length = 32)
 	private String libelleBibliotheque;
@@ -40,11 +40,11 @@ public class Bibliotheque implements Serializable {
 	public Bibliotheque() {
 	}
 
-	public Byte getIdBibliotheque() {
+	public Short getIdBibliotheque() {
 		return this.idBibliotheque;
 	}
 
-	public void setIdBibliotheque(Byte idBibliotheque) {
+	public void setIdBibliotheque(Short idBibliotheque) {
 		this.idBibliotheque = idBibliotheque;
 	}
 

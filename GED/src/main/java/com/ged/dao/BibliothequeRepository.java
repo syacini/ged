@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ged.domain.Bibliotheque;
 
 @Repository
-public interface BibliothequeRepository extends JpaRepository<Bibliotheque, Byte> {
+public interface BibliothequeRepository extends JpaRepository<Bibliotheque, Short> {
 
 }

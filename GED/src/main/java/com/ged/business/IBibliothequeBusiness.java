@@ -10,7 +10,7 @@ public interface IBibliothequeBusiness {
 
 	public Collection<Bibliotheque> getAllBibliotheques();
 
-	public Bibliotheque getBibliothequeById(Byte id);
+	public Bibliotheque getBibliothequeById(Short id);
 
 	public Bibliotheque majBibliotheque(Bibliotheque bibliotheque);
 
