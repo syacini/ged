@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IActionBusiness;
-import com.ged.dao.ActionRepository;
-import com.ged.domain.Action;
+import com.ged.dao.tenant.ActionRepository;
+import com.ged.domain.tenant.Action;
 
 
 @Service

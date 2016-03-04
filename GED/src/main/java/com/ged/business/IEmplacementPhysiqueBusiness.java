@@ -2,7 +2,7 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.EmplacementPhysique;
+import com.ged.domain.tenant.EmplacementPhysique;
 
 public interface IEmplacementPhysiqueBusiness {
 

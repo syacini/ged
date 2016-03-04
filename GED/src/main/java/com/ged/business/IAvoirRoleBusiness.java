@@ -2,10 +2,10 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.AvoirRole;
-import com.ged.domain.Bibliotheque;
-import com.ged.domain.Role;
-import com.ged.domain.Utilisateur;
+import com.ged.domain.tenant.AvoirRole;
+import com.ged.domain.tenant.Bibliotheque;
+import com.ged.domain.tenant.Role;
+import com.ged.domain.tenant.Utilisateur;
 
 public interface IAvoirRoleBusiness {
 

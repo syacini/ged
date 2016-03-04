@@ -2,7 +2,7 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.Bibliotheque;
+import com.ged.domain.tenant.Bibliotheque;
 
 public interface IBibliothequeBusiness {
 

@@ -2,7 +2,7 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.Utilisateur;
+import com.ged.domain.tenant.Utilisateur;
 
 public interface IUtilisateurBusiness {
 

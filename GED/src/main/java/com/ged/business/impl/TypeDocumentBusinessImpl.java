@@ -5,8 +5,8 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ged.business.ITypeDocumentBusiness;
-import com.ged.dao.TypeDocumentRepository;
-import com.ged.domain.TypeDocument;
+import com.ged.dao.tenant.TypeDocumentRepository;
+import com.ged.domain.tenant.TypeDocument;
 
 public class TypeDocumentBusinessImpl implements ITypeDocumentBusiness {
 

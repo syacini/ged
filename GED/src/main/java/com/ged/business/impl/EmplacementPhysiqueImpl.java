@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IEmplacementPhysiqueBusiness;
-import com.ged.dao.EmplacementPhysiqueRepository;
-import com.ged.domain.EmplacementPhysique;
+import com.ged.dao.tenant.EmplacementPhysiqueRepository;
+import com.ged.domain.tenant.EmplacementPhysique;
 
 @Service
 public class EmplacementPhysiqueImpl implements IEmplacementPhysiqueBusiness {

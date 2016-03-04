@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IUtilisateurBusiness;
-import com.ged.dao.UtilisateurRepository;
-import com.ged.domain.Utilisateur;
+import com.ged.dao.tenant.UtilisateurRepository;
+import com.ged.domain.tenant.Utilisateur;
 
 @Service
 public class UtilisateurBusinessImpl implements IUtilisateurBusiness {

@@ -2,8 +2,8 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.Action;
-import com.ged.domain.Role;
+import com.ged.domain.tenant.Action;
+import com.ged.domain.tenant.Role;
 
 public interface IRoleBusiness {
 

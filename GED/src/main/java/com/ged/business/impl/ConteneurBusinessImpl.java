@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IConteneurBusiness;
-import com.ged.dao.ConteneurRepository;
-import com.ged.domain.Conteneur;
+import com.ged.dao.tenant.ConteneurRepository;
+import com.ged.domain.tenant.Conteneur;
 
 @Service
 public class ConteneurBusinessImpl implements IConteneurBusiness {

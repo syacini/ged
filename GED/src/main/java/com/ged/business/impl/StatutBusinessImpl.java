@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IStatutBusiness;
-import com.ged.dao.StatutRepository;
-import com.ged.domain.Statut;
+import com.ged.dao.tenant.StatutRepository;
+import com.ged.domain.tenant.Statut;
 
 @Service
 public class StatutBusinessImpl implements IStatutBusiness {

@@ -2,7 +2,7 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.Statut;
+import com.ged.domain.tenant.Statut;
 
 public interface IStatutBusiness {
 

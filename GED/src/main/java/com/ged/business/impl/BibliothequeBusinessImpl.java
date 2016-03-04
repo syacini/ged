@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.ged.business.IBibliothequeBusiness;
 import com.ged.business.IConteneurBusiness;
-import com.ged.dao.BibliothequeRepository;
-import com.ged.domain.Bibliotheque;
-import com.ged.domain.Conteneur;
+import com.ged.dao.tenant.BibliothequeRepository;
+import com.ged.domain.tenant.Bibliotheque;
+import com.ged.domain.tenant.Conteneur;
 
 @Service
 public class BibliothequeBusinessImpl implements IBibliothequeBusiness {

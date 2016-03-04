@@ -2,7 +2,7 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.Action;
+import com.ged.domain.tenant.Action;
 
 public interface IActionBusiness {
 

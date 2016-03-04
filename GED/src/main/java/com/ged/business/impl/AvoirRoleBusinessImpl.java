@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IAvoirRoleBusiness;
-import com.ged.dao.AvoirRoleRepository;
-import com.ged.domain.AvoirRole;
-import com.ged.domain.AvoirRolePK;
-import com.ged.domain.Bibliotheque;
-import com.ged.domain.Role;
-import com.ged.domain.Utilisateur;
+import com.ged.dao.tenant.AvoirRoleRepository;
+import com.ged.domain.tenant.AvoirRole;
+import com.ged.domain.tenant.AvoirRolePK;
+import com.ged.domain.tenant.Bibliotheque;
+import com.ged.domain.tenant.Role;
+import com.ged.domain.tenant.Utilisateur;
 
 @Service
 public class AvoirRoleBusinessImpl implements IAvoirRoleBusiness {

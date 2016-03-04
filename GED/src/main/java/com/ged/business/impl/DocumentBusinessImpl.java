@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IDocumentBusiness;
-import com.ged.dao.DocumentRepository;
-import com.ged.domain.Bibliotheque;
-import com.ged.domain.Conteneur;
-import com.ged.domain.Document;
-import com.ged.domain.TypeDocument;
+import com.ged.dao.tenant.DocumentRepository;
+import com.ged.domain.tenant.Bibliotheque;
+import com.ged.domain.tenant.Conteneur;
+import com.ged.domain.tenant.Document;
+import com.ged.domain.tenant.TypeDocument;
 
 @Service
 public class DocumentBusinessImpl implements IDocumentBusiness {

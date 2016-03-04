@@ -2,7 +2,7 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.TypeDocument;
+import com.ged.domain.tenant.TypeDocument;
 
 public interface ITypeDocumentBusiness {
 

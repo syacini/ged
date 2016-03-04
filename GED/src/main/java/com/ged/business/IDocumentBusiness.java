@@ -2,10 +2,10 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.Bibliotheque;
-import com.ged.domain.Conteneur;
-import com.ged.domain.Document;
-import com.ged.domain.TypeDocument;
+import com.ged.domain.tenant.Bibliotheque;
+import com.ged.domain.tenant.Conteneur;
+import com.ged.domain.tenant.Document;
+import com.ged.domain.tenant.TypeDocument;
 
 public interface IDocumentBusiness {
 

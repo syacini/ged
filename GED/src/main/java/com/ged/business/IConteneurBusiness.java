@@ -2,7 +2,7 @@ package com.ged.business;
 
 import java.util.Collection;
 
-import com.ged.domain.Conteneur;
+import com.ged.domain.tenant.Conteneur;
 
 public interface IConteneurBusiness {
 

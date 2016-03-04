@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ged.business.IBibliothequeBusiness;
-import com.ged.domain.Bibliotheque;
+import com.ged.domain.tenant.Bibliotheque;
 
 @RestController
 public class BibliothequeRestService {

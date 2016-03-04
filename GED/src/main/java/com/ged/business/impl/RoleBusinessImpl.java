@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ged.business.IRoleBusiness;
-import com.ged.dao.RoleRepository;
-import com.ged.domain.Action;
-import com.ged.domain.Role;
+import com.ged.dao.tenant.RoleRepository;
+import com.ged.domain.tenant.Action;
+import com.ged.domain.tenant.Role;
 
 @Service
 public class RoleBusinessImpl implements IRoleBusiness {
