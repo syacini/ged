@@ -28,15 +28,13 @@ import liquibase.integration.spring.SpringLiquibase;
 
 @Configuration
 @EnableConfigurationProperties(JpaProperties.class)
-@EnableJpaRepositories(
-		entityManagerFactoryRef = "masterEntityManager", 
-		transactionManagerRef = "masterTransactionManager", 
-		basePackages = { "com.ged.dao.master" })
+@EnableJpaRepositories(entityManagerFactoryRef = "masterEntityManager", transactionManagerRef = "masterTransactionManager", basePackages = {
+		"com.ged.dao.master" })
 @EnableTransactionManagement
 public class DatabaseConfiguration {
 	private final static Logger LOGGER = LoggerFactory.getLogger(DatabaseConfiguration.class);
 
-	@Value("${liquibase.context}")
+	@Value("${liquibase.contexts}")
 	private String liquibaseContext;
 
 	@Value("${spring.datasource.url}")
@@ -59,20 +57,21 @@ public class DatabaseConfiguration {
 
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
-		LOGGER.debug("Configuring datasource {} {} {}", dataSourceClassName, url, user);
-		HikariConfig config = new HikariConfig();
-		config.setDataSourceClassName(dataSourceClassName);
-		config.addDataSourceProperty("url", url);
-		config.addDataSourceProperty("user", user);
-		config.addDataSourceProperty("password", password);
+		DatabaseConfiguration.LOGGER.debug("Configuring datasource {} {} {}", this.dataSourceClassName, this.url,
+				this.user);
+		final HikariConfig config = new HikariConfig();
+		config.setDataSourceClassName(this.dataSourceClassName);
+		config.addDataSourceProperty("url", this.url);
+		config.addDataSourceProperty("user", this.user);
+		config.addDataSourceProperty("password", this.password);
 		return new HikariDataSource(config);
 	}
 
 	@Bean
-	public SpringLiquibase liquibase(DataSource dataSource) {
-		SpringLiquibase sl = new SpringLiquibase();
+	public SpringLiquibase liquibase(final DataSource dataSource) {
+		final SpringLiquibase sl = new SpringLiquibase();
 		sl.setDataSource(dataSource);
-		sl.setContexts(liquibaseContext);
+		sl.setContexts(this.liquibaseContext);
 		sl.setChangeLog("classpath:dbchangelog.xml");
 		sl.setShouldRun(true);
 		return sl;
@@ -80,12 +79,12 @@ public class DatabaseConfiguration {
 
 	@Bean(name = "masterEntityManager")
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-		em.setDataSource(dataSource());
+		final JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+		final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+		em.setDataSource(this.dataSource());
 		em.setPackagesToScan(new String[] { "com.ged.domain.master" });
 		em.setJpaVendorAdapter(vendorAdapter);
-		em.setJpaProperties(additionalJpaProperties());
+		em.setJpaProperties(this.additionalJpaProperties());
 
 		em.setPersistenceUnitName("master");
 
@@ -93,16 +92,17 @@ public class DatabaseConfiguration {
 	}
 
 	private Properties additionalJpaProperties() {
-		Properties properties = new Properties();
-		for (Map.Entry<String, String> entry : jpaProperties.getHibernateProperties(dataSource).entrySet()) {
+		final Properties properties = new Properties();
+		for (final Map.Entry<String, String> entry : this.jpaProperties.getHibernateProperties(this.dataSource)
+				.entrySet()) {
 			properties.setProperty(entry.getKey(), entry.getValue());
 		}
 		return properties;
 	}
 
 	@Bean(name = "masterTransactionManager")
-	public JpaTransactionManager transactionManager(EntityManagerFactory masterEntityManager) {
-		JpaTransactionManager transactionManager = new JpaTransactionManager();
+	public JpaTransactionManager transactionManager(final EntityManagerFactory masterEntityManager) {
+		final JpaTransactionManager transactionManager = new JpaTransactionManager();
 		transactionManager.setEntityManagerFactory(masterEntityManager);
 		return transactionManager;
 	}
